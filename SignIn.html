@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Sign In</title>
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+  <link href='http://fonts.googleapis.com/css?family=Roboto:300' rel='stylesheet' type='text/css'>
+  <style>
+  #toggle {
+    width: 100px;
+    height: 30px;
+    font-family: 'Roboto', sans-serif;
+    background-color: #2196F3;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 30px;
+    margin: 0 auto;
+    color: #fff;
+    box-shadow: 0 7px 10px 0 rgba(0, 0, 0, 0.24);
+  }
+  #toggle:hover {
+    cursor: pointer;
+  }
+  input {
+    display: block;
+    margin :  0 auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-left:5px;
+    width: 0px;
+    border: 0px;
+    height:0px;
+    border: 0px;
+    border-bottom: 3px solid #888888;
+    background-color: #BBDEFB;
+    transition: background-color 500ms ease;
+    /*min-width: 75%;*/
+  }
+  
+  input:focus {
+    background-color: #fff;
+    transition: background-color 500ms ease;
+  }
+  #enter {
+    width: 80px;
+    height: 30px;
+    background-color: #E3F2FD;
+    text-align: center;
+    
+    margin: 0 auto;
+    margin-top: 1.5em;
+    transition: all 500ms ease;
+    color: black;
+    min-width: 50%;
+  }
+  
+  #enter:hover {
+    cursor: pointer;
+    /*background-color: #90CAF9;*/
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+    transition: all 50ms ease;
+
+  }
+  
+  </style>
+  <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+  <script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+</head>
+<body>
+ 
+
+<div id="toggle">Sign In</div>
+
+<script>
+
+function loadSign( jQuery ) {
+  $("#toggle").animate({ "height": "200px", "width": "20%","min-width": "10em"}, "slow" );
+  //Set minumum length
+  $("#toggle").append("<input type='text' placeholder='Username' autofocus> <input type='password' placeholder='Password'> <div id='enter'>Enter</div>");
+  
+  $("input").animate({ "height": "30px", "width": "75%",}, "slow"  );
+  $("#toggle:hover").css({"cursor": "auto",})
+}
+$( "#toggle" ).one("click", loadSign)
+//$( document ).ready(function() {}
+
+$(document).keypress(function(e) {
+    if(e.which == 13) {
+        $("#toggle").click();
+    }
+});
+
+</script>
+ 
+</body>
+</html>
